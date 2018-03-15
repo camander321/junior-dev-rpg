@@ -19,7 +19,8 @@ export class Character {
     this.experience = 0;
     this.nextLevel = 10;
     this.level = 1;
-    this.money = 0;
+    this.money = 5;
+    this.moves = [];
   }
 
   addExperience(amount) {
@@ -27,10 +28,6 @@ export class Character {
     while (this.experience >= this.nextLevel) {
       this.levelUp();
     }
-  }
-
-  checkForLevelUp() {
-    return this.experience >= this.nextLevel;
   }
 
   levelUp() {
@@ -56,6 +53,9 @@ export class Character {
       this.money -= item.price;
       this.inventory.push(item);
       this.addStats(item.stats);
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -64,7 +64,12 @@ export class Character {
     if (choice > -1) {
       this.inventory.splice(choice, 1);
       this.removeStats(item.stats);
+      this.addMoney(item.price/2);
     }
+  }
+
+  addMove(move) {
+    this.moves.push(move);
   }
 
   addMoney(amount) {

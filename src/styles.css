@@ -1,3 +1,15 @@
 body {
-  background-color: #7FDBFF;
+  background-color: #1e4e93;
+}
+
+#terminal {
+  margin-top: 8vh;
+}
+
+#logo {
+  width: 630px;
+  margin: 0 auto;
+}
+pre {
+  color: white;
 }

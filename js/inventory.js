@@ -5,3 +5,9 @@ export class Inventory {
     this.stats = stats;
   }
 }
+
+export class Store {
+  constructor() {
+    this.listOfItems = [];
+  }
+}

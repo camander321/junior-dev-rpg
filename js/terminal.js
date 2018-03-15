@@ -93,6 +93,18 @@ export class Terminal {
       this._output.appendChild(newLine);
     };
 
+		this.printPre = function() {
+      var newLine = document.createElement('pre');
+      newLine.textContent = " \n\
+			         _             _              ____               ____  ____   ____ \n\
+			        | |_   _ _ __ (_) ___  _ __  |  _ \\  _____   __ |  _ \\|  _ \\ / ___|\n\
+			     _  | | | | | '_ \\| |/ _ \\| '__| | | | |/ _ \\ \\ / / | |_) | |_) | |  _ \n\
+			    | |_| | |_| | | | | | (_) | |    | |_| |  __/\\ V /  |  _ <|  __/| |_| |\n\
+			     \\___/ \\__,_|_| |_|_|\\___/|_|    |____/ \\___| \\_/   |_| \\_\\_|    \\____|"
+
+      this._output.appendChild(newLine);
+    };
+
     this.input = function (message, callback) {
       this.promptInput(this, message, 1, callback);
     };
